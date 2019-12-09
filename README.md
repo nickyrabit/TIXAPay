@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Handler USSD API
 
 [![Platform](https://img.shields.io/badge/platform-android-brightgreen.svg)](https://developer.android.com/index.html)
@@ -173,3 +174,7 @@ img[src*='#gif'] {
     margin: auto;
 }
 </style>
+=======
+# TIXAPay
+This is an app to securely assist USSD use cases for Tanzanians
+>>>>>>> c8d6d3f715b0127aa7af1526d9584b24368a4694

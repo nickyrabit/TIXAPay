@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -72,6 +73,28 @@ public class MainMenuActivity extends AppCompatActivity
             alertDialog.show();
         }
 
+        //Check what is the SIM Network in Slot 1
+        if(simCardNetwork().equals("Airtel")){
+         //Place Airtel Branding Icons and Text
+        }else {
+            ////Some other phone line
+        }
+
+
+
+
+
+    }
+
+
+    public String simCardNetwork(){
+        TelephonyManager tManager = (TelephonyManager) getBaseContext()
+                .getSystemService(Context.TELEPHONY_SERVICE);
+
+        String sim1 = tManager.getNetworkOperatorName();
+
+        Log.d("SIM_ONE","SIM ONE "+sim1);
+        return  sim1;
     }
 
     @Override
