@@ -112,8 +112,8 @@ public class USSDService extends AccessibilityService {
 
 
     private boolean isUSSDNeed(AccessibilityEvent event) {
-        return isUSSDWidget(event)
-                && (event.getText().get(0).toString().contains(":"));
+        return isUSSDWidget(event);
+                //&& (event.getText().get(0).toString().contains(":"));
     }
 
     private boolean LogView(AccessibilityEvent event) {

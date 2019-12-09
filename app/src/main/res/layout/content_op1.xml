@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,8 +10,9 @@
 
     <TextView
         android:id="@+id/txt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:textSize="16sp"
         android:text="@string/usss_input" />
 
@@ -22,10 +24,22 @@
         android:layout_below="@+id/txt"
         android:inputType="phone"
         android:textSize="16sp"
+        android:visibility="invisible"
         android:hint="Put number"
         android:text="*515#"
         android:singleLine="true" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn3">
 
+        <TextView
+            android:id="@+id/result"
+            android:textSize="16sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+    </ScrollView>
     <Button
         android:id="@+id/btn1"
         android:textSize="16sp"
@@ -33,7 +47,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone"
-        android:text="CALL" />
+        android:text="ANGALIA SALIO" />
 
     <Button
         android:id="@+id/btn2"
@@ -42,10 +56,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn1"
+        android:visibility="invisible"
         android:text="CALL/OVERLAY(M)" />
 
     <Button
         android:id="@+id/btn3"
+        android:visibility="invisible"
         android:textSize="16sp"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="fill_parent"
@@ -53,17 +69,5 @@
         android:layout_below="@+id/btn2"
         android:text="ACCESSIBILITY IS ACTIVE?" />
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/btn3">
 
-        <TextView
-            android:id="@+id/result"
-            android:textSize="16sp"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
-    </ScrollView>
-</RelativeLayout>
+</LinearLayout>

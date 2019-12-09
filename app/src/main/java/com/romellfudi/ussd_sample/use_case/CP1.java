@@ -27,11 +27,8 @@ import com.romellfudi.ussdlibrary.USSDController;
 import android.Manifest.permission;
 
 /**
- * Use Case for Test Windows
  *
- * @author Romell Domínguez
- * @version 1.1.b 27/09/2018
- * @since 1.0.a
+ * Nicholaus
  */
 public class CP1 extends Fragment {
 
@@ -60,10 +57,10 @@ public class CP1 extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = phone.getText().toString().trim();
+           //     String phoneNumber = phone.getText().toString().trim();
                 final USSDController ussdController = USSDController.getInstance(getActivity());
                 result.setText("");
-                ussdController.callUSSDInvoke(phoneNumber, new USSDController.CallbackInvoke() {
+                ussdController.callUSSDInvoke("*102#", new USSDController.CallbackInvoke() {
                     @Override
                     public void responseInvoke(String message) {
                         Log.d("APP",message);
