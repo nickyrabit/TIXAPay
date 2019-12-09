@@ -28,7 +28,7 @@ import com.romellfudi.ussdlibrary.USSDService;
 /**
  * Main Activity
  *
- * @author Romell Domínguez
+ * @author Romell Domínguez + Nicholaus Legnard
  * @version 1.0.b 23/02/2017
  * @since 1.0
  */
