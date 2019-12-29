@@ -48,7 +48,7 @@ public class OverlayShowingService extends Service {
         }
         overlayedButton = new Button(this);
         overlayedButton.setText(tittle);
-        overlayedButton.setAlpha(0.7f);
+        overlayedButton.setAlpha(0.9f);
         overlayedButton.setBackgroundColor(0xFFFFFFFF);
         overlayedButton.setTextSize(TypedValue.COMPLEX_UNIT_SP,26);
 

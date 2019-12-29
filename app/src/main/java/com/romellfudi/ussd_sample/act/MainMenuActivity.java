@@ -12,11 +12,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -34,11 +32,14 @@ import com.romellfudi.ussdlibrary.USSDService;
  */
 public class MainMenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -60,9 +61,9 @@ public class MainMenuActivity extends AppCompatActivity
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                     MainMenuActivity.this);
-            alertDialogBuilder.setTitle("Permisos de accesibilidad");
+            alertDialogBuilder.setTitle("Accessibility permissions");
             alertDialogBuilder
-                    .setMessage("Debe habilitar los permisos de accesibilidad para la app '"+getString(R.string.app_name)+"'")
+                    .setMessage("You must enable accessibility permissions for the app'"+getString(R.string.app_name)+"'")
                             .setCancelable(false)
                             .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
@@ -73,40 +74,23 @@ public class MainMenuActivity extends AppCompatActivity
             alertDialog.show();
         }
 
-        //Check what is the SIM Network in Slot 1
-        if(simCardNetwork().equals("Airtel")){
-         //Place Airtel Branding Icons and Text
-        }else {
-            ////Some other phone line
-        }
-
 
 
 
 
     }
 
-
-    public String simCardNetwork(){
-        TelephonyManager tManager = (TelephonyManager) getBaseContext()
-                .getSystemService(Context.TELEPHONY_SERVICE);
-
-        String sim1 = tManager.getNetworkOperatorName();
-
-        Log.d("SIM_ONE","SIM ONE "+sim1);
-        return  sim1;
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode==1 && !isAccessibilitySettingsOn(getApplicationContext())) {
-                Toast.makeText(MainMenuActivity.this,"Debe habilitar los permisos de accesibilidad para la app "+getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainMenuActivity.this,"You must enable accessibility permissions for the app "+getString(R.string.app_name),Toast.LENGTH_SHORT).show();
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                         MainMenuActivity.this);
-                alertDialogBuilder.setTitle("Permisos de accesibilidad");
+                alertDialogBuilder.setTitle("Accessibility permissions");
                 alertDialogBuilder
-                        .setMessage("Debe habilitar los permisos de accesibilidad para la app '"+getString(R.string.app_name)+"'")
+                        .setMessage("You must enable accessibility permissions for the app '"+getString(R.string.app_name)+"'")
                         .setCancelable(false)
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
